@@ -1,0 +1,35 @@
+{
+  "name": "nextjs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cookie-parser": "^1.4.3",
+    "express": "^4.16.3",
+    "express-session": "^1.15.6",
+    "isomorphic-unfetch": "^2.0.0",
+    "material-ui": "^0.20.0",
+    "mongodb": "^3.0.6",
+    "next": "^5.1.0",
+    "o": "^0.2.0",
+    "ooth": "^1.4.2",
+    "ooth-client": "^1.2.1",
+    "ooth-client-react": "^1.2.1",
+    "ooth-client-react-next": "^1.2.1",
+    "ooth-local": "^1.4.2",
+    "ooth-mongo": "^1.2.1",
+    "ooth-profile": "^1.4.0",
+    "ooth-roles": "^1.4.0",
+    "react": "^16.3.1",
+    "react-dom": "^16.3.1",
+    "react-tap-event-plugin": "^3.0.2",
+    "recompose": "^0.26.0"
+  }
+}
