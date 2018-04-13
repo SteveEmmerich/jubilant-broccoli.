@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import Layout from '../components/Layout'
 import withPage from '../hocs/withPage'
 import Dashboard from '../components/Dashboard'
+import History from '../components/History'
 import fetch from 'isomorphic-unfetch';
 
 class dashboard extends Component {
@@ -21,7 +22,7 @@ class dashboard extends Component {
     this.props = {...this.props, users: []}
     return (
       <Layout title="Dashboard">
-       
+       <History {...this.props}/>
       </Layout>
     )
   }
