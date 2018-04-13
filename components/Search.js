@@ -170,8 +170,11 @@ class SearchComponent extends Component {
 }
 const Search = compose(
   withUser,
-  graphql(CreateSearchQuery, {options: (props) => ({
-    refetchQueries: [{query: UsersQuery, variables: {query: props.query}}]
+  graphql(CreateSearchQuery, {
+    options: (props) => ({
+    refetchQueries: [
+      {query: UsersQuery, 
+      variables: {query: props.query}}]
   })})
 )(SearchComponent)
 

@@ -36,6 +36,7 @@ module.exports = (db) =>
     }
     type Mutation {
       createSearch(query: String, favorite: Boolean): Search
+      updateSearch(_id: ID!, favorite: Boolean): Search
     }
     schema {
       query: Query
@@ -61,6 +62,7 @@ module.exports = (db) =>
           throw new Error('User not logged in.')
         }
         console.log('args: ', query)
+      
         return (await Users.find({query}, {sort: {createdAt: -1}}).toArray()).map(prepare)
       },
       searches: async (root, args, {userId}, context) => {
@@ -100,7 +102,17 @@ module.exports = (db) =>
         //args.success =
         const _id = (await Searches.insertOne(args)).insertedId
         return prepare(await Searches.findOne(ObjectId(_id)))
-      }
+      },
+    updateSearch: async (root, args, {userId}) => {
+      console.log('args: ', args)
+      let update = prepare(await Searches.findAndModify(
+        {_id: ObjectId(args._id)}, 
+        [['_id', 'asc']],
+        {$set: {favorite: args.favorite}}
+        )).value
+      console.log('update: ', update)
+      return update
+    }
     }
   }
 
