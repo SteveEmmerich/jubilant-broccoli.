@@ -4,12 +4,17 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "build": "next build",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "node server.js"
+    "dev": "node server.js",
+    "start": "next build; NODE_ENV=production node server.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "now": {
+    "alias": "sdemmer"
+  },
   "dependencies": {
     "body-parser": "^1.18.2",
     "cookie-parser": "^1.4.3",
